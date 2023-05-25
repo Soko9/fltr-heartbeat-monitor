@@ -530,19 +530,43 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   textAlign: TextAlign.center,
                                   style: theme.textTheme.displaySmall!.copyWith(
                                     color: ThemeService.kColorDark.value,
+                                    fontSize: 24.0,
                                   ),
                                 ),
                                 Expanded(
-                                  child: Text(
-                                    _bpm.toString(),
-                                    textAlign: TextAlign.center,
-                                    style:
-                                        theme.textTheme.displayLarge!.copyWith(
-                                      fontSize: 175.0,
-                                      height: 1.1,
-                                      fontWeight: FontWeight.w900,
-                                      color: ThemeService.kColorDark.value,
-                                    ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        "min\n${currentUser!.getBPMRange()["min"].toString()}",
+                                        textAlign: TextAlign.center,
+                                        style: theme.textTheme.displaySmall!
+                                            .copyWith(
+                                          color: ThemeService.kColorDark.value,
+                                        ),
+                                      ),
+                                      Text(
+                                        _bpm.toString(),
+                                        textAlign: TextAlign.center,
+                                        style: theme.textTheme.displayLarge!
+                                            .copyWith(
+                                          fontSize: 140.0,
+                                          height: 1.1,
+                                          fontWeight: FontWeight.w900,
+                                          color: ThemeService.kColorDark.value,
+                                        ),
+                                      ),
+                                      Text(
+                                        "max\n${currentUser!.getBPMRange()["max"].toString()}",
+                                        textAlign: TextAlign.center,
+                                        style: theme.textTheme.displaySmall!
+                                            .copyWith(
+                                          color: ThemeService.kColorDark.value,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],

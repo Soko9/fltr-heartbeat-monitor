@@ -200,7 +200,11 @@ class _SessionsPageState extends State<SessionsPage> {
                                           CrossAxisAlignment.end,
                                       children: [
                                         Text(
-                                          'Swipe Right to Delete a Session',
+                                          '↤',
+                                          style: theme.textTheme.displayMedium,
+                                        ),
+                                        Text(
+                                          'Swipe Right or Left to Delete a Session',
                                           style: theme.textTheme.displayMedium
                                               ?.copyWith(fontSize: 14.0),
                                         ),
